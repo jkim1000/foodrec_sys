@@ -1,2 +1,2 @@
 # foodrec_sys
-Food recommendation app using NLP techniques 
+Food recommendation app using NLP
