@@ -6,12 +6,10 @@ import pandas as pd
 url = "https://www.jamieoliver.com/recipes/category/course/mains/"
 page = requests.get(url)
 
-# Initializing DataFrame to store the scraped URLs
-recipe_url_df = pd.DataFrame() 
-
 # BeautifulSoup enables to find the elements/tags in a webpage
 soup = BeautifulSoup(page.text, "html.parser")
 
+# Different food catergories on JamieOliver website
 food_cat = ["mains", "snacks", "breakfast", "desserts"]
 
 # Selecting all the 'a' tags (URLs) present in the webpage and extracting 
@@ -32,4 +30,3 @@ df = pd.DataFrame({"recipe_urls":recipe_urls})
 df['recipe_urls'] = "https://www.jamieoliver.com" + df['recipe_urls'].astype('str')
 
 df.to_csv(r"/Users/tk/Desktop/foodrec_sys/data/recipe_urls.csv", sep="\t", index=False)
-
