@@ -30,19 +30,16 @@ def make_clickable(name, link):
 
 
 def main():
-    image = Image.open("input/wordcloud.png").resize((680, 150))
-    st.image(image)
-    st.markdown("# *What's Cooking? :cooking:*")
+    # image = Image.open("input/wordcloud.png").resize((680, 150))
+    # st.image(image)
+    st.markdown("# Find my recipe!")
+
 
     st.markdown(
-        "An ML powered app by Thomas Kim <a href='https://github.com/jkim1000/foodrec_sys' > <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/600px-Octicons-mark-github.svg.png' width='20' height='20' > </a> ",
-        unsafe_allow_html=True,
+        "## Feeling a little adventurous in the kitchen? Input some ingredients that you love and get started cooking!"
     )
     st.markdown(
-        "## Given a list of ingredients, what different recipes can I can make? :tomato: "
-    )
-    st.markdown(
-        "For example, say I want to use up some food in my apartment, what can I cook? :house: My ML based model will look through over 4500 recipes to find matches for you... :mag: Try it out for yourself below! :arrow_down:"
+        "How to use the app: Enter ingredients you would like to cook with (separate ingredients with a comma) and hit the 'Give me recommendations!' button. Try it out for yourself below! :arrow_down:"
     )
 
     st.text("")
@@ -56,10 +53,16 @@ def main():
     )
 
     ingredients = st.text_input(
-        "Enter ingredients you would like to cook with (seperate ingredients with a comma)",
+        "Enter below:",
         "onion, chorizo, chicken thighs, paella rice, frozen peas, prawns",
     )
     session_state.execute_recsys = st.button("Give me recommendations!")
+
+
+    st.markdown(
+        "An ML powered app by Thomas Kim <a href='https://github.com/jkim1000/foodrec_sys' > <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/600px-Octicons-mark-github.svg.png' width='20' height='20' > </a> ",
+        unsafe_allow_html=True,
+    )
 
     if session_state.execute_recsys:
 
