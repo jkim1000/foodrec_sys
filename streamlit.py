@@ -7,8 +7,8 @@ from PIL import Image
 # importing sys
 import sys
 # adding models folder to the system path
-sys.path.insert(0, './models')
-
+sys.path.insert(0, './src/models')
+ 
 import config, rec_sys
 from ingredient_parser import ingredient_parser
 
@@ -35,7 +35,7 @@ def main():
     st.markdown("# *What's Cooking? :cooking:*")
 
     st.markdown(
-        "An ML powered app by Jack Leitch <a href='https://github.com/jackmleitch/whatscooking-deployment' > <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/600px-Octicons-mark-github.svg.png' width='20' height='20' > </a> ",
+        "An ML powered app by Thomas Kim <a href='https://github.com/jkim1000/foodrec_sys' > <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/600px-Octicons-mark-github.svg.png' width='20' height='20' > </a> ",
         unsafe_allow_html=True,
     )
     st.markdown(
